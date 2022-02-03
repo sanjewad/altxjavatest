@@ -31,15 +31,12 @@ public class MovieController {
 
     @GetMapping("/movie/{id}")
     public Movie getMovie(@PathVariable Long id) {
-        System.out.println("#######" + id);
        Movie movie =  movieService.getMovieById(id);
-        System.out.println(movie.getTitle() + "  " + movie.getRunningTimeMins() + "  " + movie.getStars().size());
         return  movie;
     }
 
     @GetMapping("/movies")
     public List<Movie> all() {
-        System.out.println("@@@@@");
         return movieService.getAllMovies();
     }
 
